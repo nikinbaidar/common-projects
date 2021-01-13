@@ -1,26 +1,24 @@
 #include <stdio.h>
 
-int mid_num(int a, int b, int c);
-
+float mid_num(float a, float b, float c);
 
 int main() {
-    int num1;
-    int num2;
-    int num3;
-    int result;
+    float num1;
+    float num2;
+    float num3;
+    float result;
 input:
     printf("numer 3 \"distinct\" integers ");
-    scanf("%d%d%d",&num1,&num2,&num3);
+    scanf("%f%f%f",&num1,&num2,&num3);
     if (num1 == num2 || num2 == num3 || num3 == num1)
         goto input;
     else
         result = mid_num(num1,num2,num3);
-    printf("the mid num is '%d' ",result);
+    printf("the mid num is '%0.1f' ",result);
     return 0;
 }
 
-
-int mid_num(int a, int b,int c) {
+float mid_num(float a, float b, float c) {
     if (a>b && a<c || a<b && a>c)
         return a;
     else if (b>a && b<c || b<a && b>c)
