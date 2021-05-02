@@ -1,7 +1,13 @@
 #include<stdio.h>
 
 int main() {
-    printf("Helloworld");
+
+    int number = 0;
+
+    do
+        printf("%d",number);
+    while (number > 0);
+
     return 0;
 }
 

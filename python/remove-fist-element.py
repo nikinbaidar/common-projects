@@ -1,3 +1,4 @@
+
 from random import sample
 
 randomList = sample(range(0,22) ,10)
