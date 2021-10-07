@@ -1,3 +1,4 @@
+
 #define isEven(integer) !(integer&1)
 #include <stdio.h>
 

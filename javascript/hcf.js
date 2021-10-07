@@ -13,4 +13,3 @@ let hcf = (num1,num2) => {
 let result = hcf(7,14);
 
 console.log(result);
-

@@ -1,6 +1,6 @@
-#include<audrino.h>
-void setup()
-{
-}
-void loop() {
+#include <stdio.h>
+
+void main() {
+    int a = 4;
+    printf("%d",a++);
 }

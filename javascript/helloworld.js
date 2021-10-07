@@ -5,7 +5,7 @@
         ( \___/ )
   __ooo__\_____/______
  /                    \
-| javascript write ups |
+| javascript writeups  |
  \_______________ooo__/
         |  |  |
         |_ | _|
@@ -24,4 +24,6 @@ let user = {
 
 let sayHi = user.greet();
 
-sayHi();
+let someFunctionName = function() {
+    some statements;
+}

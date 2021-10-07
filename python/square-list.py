@@ -1,8 +1,8 @@
 
-########################################################################################
-# This program returns an array that is the square of every element in the array named #
-# "listOfIntegers".                                                                    #
-########################################################################################
+############################################################################
+# This program returns an array that is the square of every element in the #
+# array named "listOfIntegers".                                            #
+############################################################################
 
 def square(array):
     return [element**2 for element in array]

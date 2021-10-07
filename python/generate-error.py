@@ -5,6 +5,6 @@ number = input("Enter a number "); # string
 try:
     float(number)
 except:
-    raise ValueError("Invalid")
+    raise ValueError("Invalid! Not a number")
 else:
     print("Valid")
