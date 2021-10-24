@@ -2,10 +2,10 @@
 # include <iostream>
 # include <sstream>
 
-using namespace std;
-
 int main() {
 
-    cout << "helloworld";
+    int a = 10;
+
+    std::cout << a ;
     return 0;
 }

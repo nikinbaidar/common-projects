@@ -2,10 +2,8 @@
 
 clear
 
-declare i=0
+scriptName=$(basename ${0})
 
-while echo $i
-    [ $i -lt 10 ]
-do
-    (( i++ ))
-done
+echo $scriptName
+
+echo $#
