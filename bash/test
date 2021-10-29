@@ -1,0 +1,56 @@
+#! /bin/bash
+function checkOneCharacterOptions() {
+    case ${1} in
+        -a) echo "Option 'a' was found" ;;
+        -b) echo "Option 'b' was found" ;;
+        -c) echo "Option 'c' was found" ;;
+        *) echo "$0: invalid argument: '${1}'"
+            exit 111
+            ;;
+    esac
+}
+
+function checkMultipleCharacterOptions() {
+    case ${1} in
+        -si) echo "Option 'si' was found" ;;
+        -human) echo "Option 'human' was found" ;;
+        *) optionsGrouped=1 ;;
+    esac
+}
+
+function checkGroupedOptions() {
+    for index in $(seq 2 ${parameterLength}) ; do
+        character=-$(echo ${1} | cut -c ${index})
+        checkOneCharacterOptions ${character}
+    done
+}
+
+function len() {
+    length=$( echo -n "$1" | wc -m )
+    echo ${length}
+}
+
+for parameter in $@ ; do
+
+    # Grab parameter criteria
+    parameterLength=$(len "${parameter}")
+    firstChar=$(echo ${parameter} | cut -c 1)
+
+    # Check if arg is grouped or single char or multichar option else raise
+    # invalid option error
+
+    if [[ ${firstChar} = "-" && ${parameterLength} -eq 2 ]]
+    then
+        checkOneCharacterOptions ${parameter}
+    elif [[ ${firstChar} = "-" ]]
+    then
+        checkMultipleCharacterOptions ${parameter}
+        if [[ ${optionsGrouped} -eq 1 ]] ; then
+            checkGroupedOptions ${parameter}
+            unset optionsGrouped
+        fi
+    else
+        echo "$0: '${parameter}': not an option"
+        exit 111
+    fi
+done

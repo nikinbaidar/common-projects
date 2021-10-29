@@ -1,0 +1,44 @@
+#! /bin/bash
+function checkOneCharacterOptions() {
+    case ${1} in
+        -a) echo "Option 'a' was found" ;;
+        -b) echo "Option 'b' was found" ;;
+        -c) echo "Option 'c' was found" ;;
+         *) echo "$0: invalid argument: '${parameter}'" ;;
+    esac
+}
+
+function checkMultipleCharacterOptions() {
+    case ${1} in
+        -si) echo "Option 'si' was found" ;;
+        -human) echo "Option 'human' was found" ;;
+        *) optionsGrouped=1 ;;
+    esac
+}
+
+function len() {
+    length=$( echo -n "$1" | wc -m )
+    echo ${length}
+}
+
+for parameter in $@
+do
+    parameterLength=$(len "${parameter}")
+    firstChar=$(echo ${parameter} | cut -c 1)
+
+    if [[ ${firstChar} = "-" && ${parameterLength} -eq 2 ]]
+    then
+        checkOneCharacterOptions ${parameter}
+    elif [[ ${firstChar} = "-" ]]
+    then
+        checkMultipleCharacterOptions ${parameter}
+        if [ ${optionsGrouped} -eq 1 ] ; then
+            for i in $(seq 2 ${parameterLength}) ; do
+                character=-$(echo ${parameter} | cut -c ${i})
+                checkOneCharacterOptions ${character}
+            done
+        fi
+    else
+        echo "$0: invalid argument: '${parameter}'"
+    fi
+done

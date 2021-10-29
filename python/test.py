@@ -1,40 +1,51 @@
-
 from os import system
-import math
+from math import pi
 
 system("clear")
 
-class Bird:
+class GeometricShapes:
+    pass
 
-    '''This is a class of birds. This class has provision for storing the
-details of various species of birds.'''
+class square(GeometricShapes):
 
-    species = "Aves"
+    def __init__(self,length):
+        self.length = length
 
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+    @property
+    def area(self):
+        return self.length*self.length
 
-    # Instance method:
-    def describe(self):
-        return f"{self.name} is {self.age} years old."
+class rectangle(GeometricShapes):
 
+    def __init__(self,length,breadth):
+        self.length = length
+        self.breadth = breadth
 
-class Dog:
-    'This is a class of Dogs and really doesn\'t do a lot.'
+    @property
+    def area(self):
+        return 2*(self.length + self.breadth)
 
-    def __init__(self, name, age):
-        self.age = age
-        self.name = name
+class circle(GeometricShapes):
 
-    def __str__(self):
-        return f"{self.name} is {self.age} years old."
+    def __init__(self, radius):
+        self.radius = radius
 
+    @property
+    def area(self):
+        return pi*self.radius*self.radius
 
-bird = Bird("Parrot", 10)
+def area(shape):
+    return shape.area
 
-dog = Dog("Tommy", 2)
+shape1 = square(5)
+shape2 = rectangle(3,4)
+shape3 = circle(1)
 
-print(bird)
+print(area(shape1))
+print(area(shape2))
+print(area(shape3))
 
-print(dog)
+# print(shape1.area())
+# print(shape2.area())
+# print(shape3.area())
+

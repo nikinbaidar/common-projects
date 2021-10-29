@@ -1,11 +1,34 @@
-
 # include <iostream>
-# include <sstream>
+# include <stdlib.h>
+
+using namespace std ;
+
+class CubeDemo {
+    public:
+        int side;
+
+        // constructor declaration
+        CubeDemo() {
+            side = 6;
+        }
+
+        // destructor declaration
+        ~CubeDemo() {
+            cout << "Destructor called \n";
+        }
+
+        int variable = 8;
+
+    private:
+};
 
 int main() {
 
-    int a = 10;
+    // object creation
 
-    std::cout << a ;
+    CubeDemo cube;
+
+    cout << cube.variable;
+
     return 0;
 }
