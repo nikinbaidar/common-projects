@@ -1,0 +1,53 @@
+#! /bin/bash
+
+function extractFirstChar() {
+    extractedFirstCharacter=$(echo $1 | cut -c 1)
+}
+
+function add() {
+    sum=0
+    for parameter in $@
+    do
+        extractFirstChar ${parameter}
+        if [ "${extractedFirstCharacter}" != "-" ] ; then
+            sum=$(( ${sum}+${parameter} ))
+        else
+            shift
+            break
+        fi
+    done
+    echo $sum
+}
+
+function multiply() {
+    product=1
+    for parameter in $@
+    do
+        extractFirstChar ${parameter}
+        if [ "${extractedFirstCharacter}" != "-" ] ; then
+            product=$(( ${product}*${parameter} ))
+        else
+            shift
+            break
+        fi
+    done
+    echo $product
+}
+
+
+while [ -n "$1" ]
+do
+    case ${1} in
+        -a) shift
+            sum=$(add $@)
+            echo $sum
+            ;;
+        -m) shift
+            product=$(multiply $@)
+            echo $product
+            ;;
+        *) shift
+    esac
+    shift
+done
+

@@ -1,0 +1,39 @@
+#! /bin/bash
+
+
+# Extract options:
+while [ -n "$1" ] ; do
+    case "$1" in
+        -a) operation=add ;;
+        -s) operation=subtract ;;
+        -m) operation=multiply ;;
+        -d) operation=divide ;;
+        -e) operation=exp ;;
+        --) shift
+            break
+            ;;
+        *) echo "$1: not an option"
+    esac
+    shift
+done
+
+echo ${operation}
+
+count=1
+
+if [ $operation = add ] ; then
+    sum=0
+    for argument in $@
+    do
+        sum=$(( sum + $argument ))
+    done
+    echo $sum
+
+elif [ $operation = multiply ] ; then
+    product=1
+    for argumnet in $@
+    do
+        product=$(( product * $argumnet ))
+    done
+    echo $product
+fi

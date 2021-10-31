@@ -1,0 +1,13 @@
+#! /bin/bash
+# Filename: optiontests
+
+while [ -n "$1" ]
+do
+    firstCharacter=$(echo $1 | cut -c 1)
+    if [ ${firstCharacter} = "-" ] ; then
+        echo "'$1' is an option"
+    else
+        echo "'$1' is an argument"
+    fi
+    shift
+done
