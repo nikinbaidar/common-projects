@@ -1,53 +1,51 @@
 #! /bin/bash
 
-function extractFirstChar() {
-    extractedFirstCharacter=$(echo $1 | cut -c 1)
+function isOption() {
+    firstChar=$(echo $1 | cut -c 1)
+    test "${firstchar}" = "-"
+    return $?
+}
+
+function countValues() {
+    count=0
+    for parameter in $@ ; do
+        if isOption ${parameter} ; then
+            break
+        else
+            ((count++))
+        fi
+    done
 }
 
 function add() {
-    sum=0
-    for parameter in $@
-    do
-        extractFirstChar ${parameter}
-        if [ "${extractedFirstCharacter}" != "-" ] ; then
-            sum=$(( ${sum}+${parameter} ))
-        else
-            shift
-            break
-        fi
-    done
+    num1=$1
+    num2=$2
+    sum=$((${num1} + ${num2}))
     echo $sum
 }
 
-function multiply() {
-    product=1
-    for parameter in $@
-    do
-        extractFirstChar ${parameter}
-        if [ "${extractedFirstCharacter}" != "-" ] ; then
-            product=$(( ${product}*${parameter} ))
-        else
-            shift
-            break
-        fi
-    done
-    echo $product
-}
+function raiseError() {
+    echo -e "$0: option '$1': $2 arguments required ${count}" \
+        "were provided"
+    }
 
+until [ -z "$1" ] ; do
+    currentParameter="$1"
+    case ${currentParameter} in
 
-while [ -n "$1" ]
-do
-    case ${1} in
         -a) shift
-            sum=$(add $@)
-            echo $sum
+            numberOfValuesAccepted=2
+            countValues $@
+            if [ ${count} -eq ${numberOfValuesAccepted} ]
+            then
+                add $1 $2
+            else
+                raiseError ${currentParameter} ${numberOfValuesAccepted}
+            fi
             ;;
-        -m) shift
-            product=$(multiply $@)
-            echo $product
-            ;;
-        *) shift
+
+        *) shift ;;
+
     esac
-    shift
 done
 
