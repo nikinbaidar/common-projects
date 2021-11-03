@@ -24,6 +24,18 @@ function add() {
     echo $sum
 }
 
+function multiply() {
+    product=1
+    for parameter in $@ ; do
+        if isOption ${parameter} ; then
+            break
+        else
+            product=$(( ${product} * ${parameter} ))
+        fi
+    done
+    echo ${product}
+}
+
 function raiseError() {
     echo -e "$0: option '$1': $2 arguments required ${count}" \
         "were provided"
@@ -41,6 +53,23 @@ until [ -z "$1" ] ; do
                 add $1 $2
             else
                 raiseError ${currentParameter} ${numberOfValuesAccepted}
+            fi
+            ;;
+
+        -m) shift
+            minArgs=2
+            maxArgs=4
+            countValues $@
+            if [ ${count} -lt ${minArgs} ]
+            then
+                echo "$0: option 'm': at least ${minArgs} values are required" \
+                    "only ${count} were provided"
+            elif [ ${count} -gt ${maxArgs} ]
+            then
+                echo "$0: option 'm': at most ${maxArgs} values are accepted" \
+                    "${count} were provided"
+            else
+                multiply $@
             fi
             ;;
 
