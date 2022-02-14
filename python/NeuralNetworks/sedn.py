@@ -18,16 +18,14 @@ y = y + e
 
 m = len(y) # number of samples
 
-x = numpy.hstack((numpy.ones((x.shape[0],1)),x))
-
-alpha = 0.0001
+alpha = 0.00001
 losses = []
 number_of_iterations = 200
 
 theta = numpy.zeros((2,1))
 
 for i in range(number_of_iterations):
-    prediction = x.dot(theta)
+    prediction = theta[0] + x * theta[1]
 
     # Calculating the loss
     delta = prediction - y
@@ -35,15 +33,7 @@ for i in range(number_of_iterations):
     loss = 1/(2*m) * numpy.sum(delta_squared)
     losses.append(loss)
 
-    for j in range(theta.shape[0]):
-        theta[j] -= alpha/m * numpy.sum((delta * x[:,j].reshape(-1,1)))
+    theta[0] -= alpha/m * numpy.sum((delta))
+    theta[1] -= alpha/m * numpy.sum((delta * x))
 
-    if i > 0 and abs(losses[i] - losses[i-1]) <= 0.005:
-        break
-
-pyplot.plot(losses, label = "Losses over Iterations" , color='r')
-pyplot.xlabel("Iterations")
-pyplot.ylabel("Losses")
-pyplot.legend()
-pyplot.show()
-
+print("The final values for theta i.e. theta*: ", theta)

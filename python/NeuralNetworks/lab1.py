@@ -32,15 +32,12 @@ def getLinearGradient(x, y, theta):
     prediction = getLinearPrediction(x, theta)
     delta = prediction - y
 
-    # Init an empty list to store gradinet values
-    gradient = []
+    # Init a gradient array with same dimensions as theta
+    gradient = numpy.zeros(theta.shape)
 
     for j in range(theta.shape[0]):
-        gradient_j = numpy.sum((delta * x[:,j].reshape(-1,1)))/totalDataPoints
-        gradient.append(gradient_j)
+        gradient[j] = numpy.sum((delta * x[:,j].reshape(-1,1)))/totalDataPoints
 
-    # Convert the list to a numpy array
-    gradient = numpy.array(gradient).reshape(-1,1)
     return gradient
 
 def linearRegression(x, y, alpha, iterations):
