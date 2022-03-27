@@ -6,25 +6,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void clear() {
-    system("clear");
-}
-
 int main () {
-
-    clear();
 
     float number;
     int integer_part;
     float fractional_part;
 
-    number = 24.04;
+    number = 3.14;
 
     integer_part = number;
     fractional_part = number - integer_part;
 
-    printf("Integer part is %d \n",integer_part);
-    printf("Fractional part is %.2f ",fractional_part);
+    printf("Integer part    = %d  \n", integer_part);
+    printf("Fractional part = %.2f\n", fractional_part);
 
     return 0;
 

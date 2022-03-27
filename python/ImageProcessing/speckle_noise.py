@@ -1,4 +1,4 @@
-#! /usr/share/python
+#!/usr/bin/env python
 
 '''
 Speckle noise is multiplicitive noise, having a granular pattern.
@@ -10,10 +10,8 @@ echoes give rise to speckle noise.
 Reference for spekcle modelling: https://bit.ly/3umKfZS
 '''
 
-# Import necessary modules
 import cv2
 import numpy
-from os import system
 from matplotlib import pyplot
 
 def addSpeckleNoise(image, scale):
@@ -26,10 +24,8 @@ def addSpeckleNoise2(image, MEAN, VARIANCE):
     noisy_image = image * (1 + noise)
     return noise
 
-system("clear")
-
-image = cv2.imread("./images/satellite-image.png", \
-        cv2.IMREAD_GRAYSCALE)/255.0
+image = cv2.imread("./images/ultrasound-fetus.duckduckgo.com.jpg", \
+    cv2.IMREAD_GRAYSCALE)/255.0
 
 speckle_noisy_img = addSpeckleNoise(image, 0.2)
 speckle_noisy_img2 = addSpeckleNoise2(image, 0.2, 0.9)

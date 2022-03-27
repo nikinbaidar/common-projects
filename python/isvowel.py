@@ -1,10 +1,12 @@
-def isVowel(char):
-    print("hello world")
-    return char in "aeiouAEIOU"
+#!/usr/bin/env python
 
-char = input("Enter a character ")
+def isVowel(char):
+  return char in "aeiouAEIOU"
+
+# char = input("Enter a character: ")
+char = 'x'
 
 if isVowel(char):
-    print("True")
+  print("Vowel")
 else:
-    print("False")
+  print("Not vowel")

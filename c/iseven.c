@@ -1,14 +1,23 @@
+/*       _\|/_
+         (o o)
+ +----oOO-{_}-OOo----------------+
+ |Just a trivial program this is.|
+ +------------------------------*/
 
-#define isEven(integer) !(integer&1)
 #include <stdio.h>
 
+#define isEven(integer) !(integer&1)
+
 int main() {
-    int number;
-    printf("Enter an integer ");
-    scanf("%d",&number);
-    if (isEven(number))
-        printf("Even");
-    else
-        printf("Odd");
-   return 0;
+  int number;
+
+  printf("Enter a number: ");
+  scanf("%d", &number);
+
+  if (isEven(number))
+    printf("%d is Even", number);
+  else
+    printf("%d is Odd", number);
+
+  return 0;
 }

@@ -1,6 +1,4 @@
-
-import os ; os.system("clear")
-
+#!/usr/bin/env python
 
 def gcd(num1,num2):
     if num1 == num2 == 0:

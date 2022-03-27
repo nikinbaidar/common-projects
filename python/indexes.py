@@ -1,10 +1,7 @@
 # /usr/bin/python
 #
 #
-
 from os import system
-
-system("clear")
 
 import numpy as np
 

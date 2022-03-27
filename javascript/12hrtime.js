@@ -14,7 +14,7 @@
 let currentDateTime = new Date();
 
 let hoursIntoDay = currentDateTime.getHours();
-let minutesIntoHours = currentDateTime.getMinutes() + 15;
+let minutesIntoHours = currentDateTime.getMinutes();
 
 let period = (hoursIntoDay < 12) ? "AM" : "PM";
 

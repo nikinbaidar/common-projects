@@ -1,9 +1,8 @@
 #! /usr/bin/python
 
 import numpy
-from scipy import stats
-from matplotlib import pyplot
-from os import system
+from   scipy      import stats
+from   matplotlib import pyplot
 
 def getSampleLength(y):
     ''' Returns the value of m '''
@@ -86,7 +85,6 @@ def main():
     losses = output.get('losses', [])
     theta = output.get('theta', [])
 
-    system("clear")
     print("The first value for loss:", losses[0])
     print("The final value for loss:", losses[-1], end="\n\n")
 
