@@ -3,16 +3,10 @@
 import cv2
 import numpy
 
-from os import system
+image = numpy.array([[0, 2, 3], [4,5,6], [7,8,9]])
 
-system ("clear")
+print(0 in image)
 
-img = cv2.imread("./images/stock-photo.duckduckgo.com.jpg", 0)/255
-noise = numpy.random.normal(0.2, 0.9, img.shape)
-print(noise)
-# cv2.imshow("My Index", noise)
+image = numpy.array([[1, 2, 3], [4,5,6], [7,8,9]])
 
-# while True:
-#     if cv2.waitKey() == 27:
-#         cv2.destroyAllWindows()
-#         break
+print(0 in image)

@@ -1,10 +1,17 @@
-
+#!/usr/bin/env python
 # WAP to input a number, if it is not a number then generate an error message
 
-number = input("Enter a number "); # string
-try:
-    float(number)
-except:
-    raise ValueError("Invalid! Not a number")
-else:
-    print("Valid")
+x = [4, 0, 65, 'a']
+
+for item in x:
+  try:
+    r = 1/item
+  except ZeroDivisionError:
+    print(ZeroDivisionError)
+  except TypeError:
+    print(TypeError)
+  else:
+    print(r)
+
+print()
+raise MemoryError("Nikin Baidar")
