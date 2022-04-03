@@ -60,6 +60,5 @@ def main():
   plotHistogram(input_image, processed_image, plotTitle="Image Histogram: "\
       "Lenna Original and Logarithmic Transformation")
 
-
 if __name__ == '__main__':
   main()

@@ -104,7 +104,7 @@ def main():
 
   image = numpy.array(image, dtype=numpy.uint8)
   print(image)
-  cv2.imshow("Test", image)
+  cv2.imshow("Transformed", image)
   cv2.waitKey()
  
 if __name__ == '__main__':
