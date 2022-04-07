@@ -35,11 +35,10 @@ def main():
   #                      [0, 1, 1, 0, 0, 1, 1, 0]],
   #                      dtype=numpy.uint8)
 
-  image = cv2.imread('./images/ultrasound-fetus.duckduckgo.com.jpg', 0)
+  image = cv2.imread('./images/speckle_noise.png', 0)
 
   rows = image.shape[0]
   cols = image.shape[1]
-
 
   out_fft = numpy.fft.fft2(image)
   # for u in range(rows):

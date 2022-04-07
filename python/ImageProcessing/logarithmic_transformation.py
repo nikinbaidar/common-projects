@@ -1,12 +1,11 @@
-#  ______________________________ 
-# / Point Operation: Logarithmic \
-# \ Transformation               /
-#  ------------------------------ 
-#         \   ^__^
-#          \  (oo)\_______
-#             (__)\       )\/\
-#                 ||----w |
-#                 ||     ||
+#  ______________________________________________________________
+# /\                                                             \
+# \_| Filename    : logarithmic_transformation.py                |
+#   | Maintainer  : Nikin Baidar                                 |
+#   | Description : Point Operation (Logarithmic Transformation) |
+#   |   _________________________________________________________|_
+#    \_/___________________________________________________________/
+# 
 
 import cv2
 import numpy

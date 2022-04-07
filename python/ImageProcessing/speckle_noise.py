@@ -28,12 +28,12 @@ image = cv2.imread("./images/ultrasound-fetus.duckduckgo.com.jpg", \
     cv2.IMREAD_GRAYSCALE)/255.0
 
 speckle_noisy_img = addSpeckleNoise(image, 0.2)
-speckle_noisy_img2 = addSpeckleNoise2(image, 0.2, 0.9)
+# speckle_noisy_img2 = addSpeckleNoise2(image, 0.2, 0.9)
 
 # Display images
 cv2.imshow("Speckle Noisy Image", speckle_noisy_img)
-cv2.imshow("Speckle Noisy Image using Gaussina Noise", speckle_noisy_img2)
-cv2.imshow("Original Image", image)
+# cv2.imshow("Speckle Noisy Image using Gaussina Noise", speckle_noisy_img2)
+# cv2.imshow("Original Image", image)
 
 # Close only when escape is pressed
 while True:
