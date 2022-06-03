@@ -1,10 +1,18 @@
 #! /bin/bash
 
-clear -x
+count=0
+range=(216 218 219 227)
 
-MNI_Template="${HOME}/Functional_Connectivity/Processed_Data/"\
-"Normalized_Data/MNI_Atlas"
+# for i in ${range[@]} ; do
+#   echo ${range[$count]}
+#   ((count++))
+# done
 
-echo ${MNI_Template}
+echo $args
 
+for ((i=0; i<5; ++i)); do
+    args+=($i)
+    # echo "${args[@]}"
+done
 
+echo ${args[@]}
