@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fakebook- Log in replica</title>
+  <style>
+
+  body {
+    background-color: #eceff4;
+    font-size: 21pt;
+  }
+
+  #box1 {
+    display: flex;
+  }
+
+  #main {
+    background-color: #eceff4;
+    margin: 6em 1.7em 3.75em 6.5em;
+    padding: 0em;
+    font-family: Helvetica;
+    width:40%;
+  }
+
+  #main h1 {
+    color:blue;
+    margin-bottom: 0em;
+  }
+
+  #main p {
+    width: 80%;
+    margin-top: 0px;
+  }
+
+  #prompt {
+    padding: 0.35em 0.7em 0em 0.7em;
+    margin: 4.7em 5em 0em 0em ;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .prompt{
+    color: grey;
+    font-size: 1rem;
+    padding: 15px;
+    margin: 5px 0px 7px;
+    width: 330px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+
+  }
+
+  input#login {
+    background-color: blue;
+    color:white;
+    padding:9px 0px;
+    margin: 7px 0px;
+    width:356px;
+    font: bold 18pt Helvetica ;
+    border-radius: 5px;
+    border: none;
+  }
+
+  a#forgotPassword {
+    color: blue;
+    background-color: white;
+    border: none;
+    padding: 0px 0px 0px 110px ;
+    font: 11pt Helvetica;
+    text-decoration: none;
+  }
+
+  #prompt hr {
+    background-color: lightgrey;
+    height: 1px;
+    border: none;
+  }
+
+  input#newAccount {
+    background-color: #37b248;
+    color: white;
+    margin: 8px 0px 8px 70px;
+    padding: 15px 20px;
+    width:195px;
+    font: bold 12.5pt Helvetica;
+    border-radius: 5px;
+    border: none;
+  }
+
+
+  body span p {
+    font: 0.88rem Helvetica;
+    padding-left: 780px;
+    margin: 25px;
+  }
+
+  span p a{
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover{
+    text-decoration: underline;
+  }
+
+  a#forgotPassword:hover{
+    text-decoration: underline;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="box1">
+    <div id="main">
+      <h1>fakebook</h1>
+      <p>Connect with friends and the world around you on Fakebook.</p>
+    </div>
+    
+  <div id="prompt">
+    <form action="facebook_login_page_submit" method="get"
+      accept-charset="utf-8" autocomplete="off">
+      <input class="prompt" type="text" placeholder="Email or phone number" name="username"/>
+      <br/>
+      <input class="prompt" type="password" placeholder="Password" name="password"/>
+      <br>
+
+      <input id="login" type="submit" value="Log in">
+      <br>
+      
+      <a id="forgotPassword" href="https://www.url.com">Forgot password?</a>
+      <br>
+      <hr>
+      <input id="newAccount" type="button" value="Create new account">
+    </form>
+  </div>
+
+  </div>
+
+  <span><p><a href="http://www.url.com" target="_blank"><strong>Create a
+        Page</strong></a> for a
+    celebrity, brand or business.</p></span>
+</body>
+</html>
