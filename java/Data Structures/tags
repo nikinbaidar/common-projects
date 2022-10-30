@@ -1,0 +1,66 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/nikin/projects/common-projects/java/Data Structures/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+Arrays	./Arrays.java	/^public class Arrays {$/;"	c
+Basics	./Basics.java	/^public class Basics {$/;"	c
+Complex	./Complex.java	/^  public Complex () {$/;"	m	class:Complex
+Complex	./Complex.java	/^  public Complex(int a) {$/;"	m	class:Complex
+Complex	./Complex.java	/^  public Complex(int a, int b){$/;"	m	class:Complex
+Complex	./Complex.java	/^public class Complex {$/;"	c
+HeapSort	./Heaps.java	/^  protected static void HeapSort() {$/;"	m	class:Heaps
+Heaps	./Heaps.java	/^  Heaps(int [] heap) {$/;"	m	class:Heaps
+Heaps	./Heaps.java	/^public class Heaps {$/;"	c
+Logarithms	./Logarithms.java	/^public class Logarithms {$/;"	c
+Main	./Heaps.java	/^class Main {$/;"	c
+Main	./Main.java	/^class Main extends Test {$/;"	c
+Maths	./Maths.java	/^public class Maths {$/;"	c
+Test	./Main.java	/^class Test {$/;"	c
+a	./Complex.java	/^  private int a, b;$/;"	f	class:Complex	file:
+b	./Complex.java	/^  private int a, b;$/;"	f	class:Complex	file:
+buildMaxHeap	./Heaps.java	/^ private static void buildMaxHeap() {$/;"	m	class:Heaps	file:
+buildMaxHeap	./Heaps.java	/^ protected static void buildMaxHeap(int pseudoLength) {$/;"	m	class:Heaps
+ceil	./Maths.java	/^  public static int ceil (double a) {$/;"	m	class:Maths
+datastructures.queues	./Heaps.java	/^package datastructures.queues;$/;"	p
+datastructures.util	./Arrays.java	/^package datastructures.util;$/;"	p
+datastructures.util	./Complex.java	/^package datastructures.util;$/;"	p
+datastructures.util	./Logarithms.java	/^package datastructures.util;$/;"	p
+datastructures.util	./Maths.java	/^package datastructures.util;$/;"	p
+datastructures.utilities	./Basics.java	/^package datastructures.utilities;$/;"	p
+depth	./Heaps.java	/^  static int depth;$/;"	f	class:Heaps
+display	./Main.java	/^  public void display() {$/;"	m	class:Main
+display	./Main.java	/^  public void display() {$/;"	m	class:Test
+exists	./Heaps.java	/^ private static boolean exists(int node) {$/;"	m	class:Heaps	file:
+exists	./Heaps.java	/^ public static boolean exists(int node, int lastNode) {$/;"	m	class:Heaps
+floor	./Maths.java	/^  public static int floor (double a) {$/;"	m	class:Maths
+getLeafNodes	./Heaps.java	/^  private static int[] getLeafNodes() {$/;"	m	class:Heaps	file:
+getNumLevels	./Heaps.java	/^  private int getNumLevels() {$/;"	m	class:Heaps	file:
+heap	./Heaps.java	/^  static int [] heap;$/;"	f	class:Heaps
+iLeftChild	./Heaps.java	/^  private static int iLeftChild(int key) {$/;"	m	class:Heaps	file:
+iLevel	./Heaps.java	/^  private static int iLevel(int key) {$/;"	m	class:Heaps	file:
+iParent	./Heaps.java	/^  private static int iParent(int key) {$/;"	m	class:Heaps	file:
+iRightChild	./Heaps.java	/^  private static int iRightChild(int key) {$/;"	m	class:Heaps	file:
+iSibling	./Heaps.java	/^  private static int iSibling(int key) {$/;"	m	class:Heaps	file:
+iSwap	./Heaps.java	/^  private static void iSwap(int i, int j) {$/;"	m	class:Heaps	file:
+isEven	./Maths.java	/^  public static boolean isEven(int a) {$/;"	m	class:Maths
+isLeafNode	./Heaps.java	/^  private static boolean isLeafNode(int key) {$/;"	m	class:Heaps	file:
+isOdd	./Maths.java	/^  public static boolean isOdd(int a) {$/;"	m	class:Maths
+log2	./Maths.java	/^  public static double log2(double a) {$/;"	m	class:Maths
+main	./Heaps.java	/^  public static void main(String[] args) {$/;"	m	class:Main
+main	./Main.java	/^  public static void main(String[] args) {$/;"	m	class:Main
+printHeap	./Heaps.java	/^  protected static void printHeap() {$/;"	m	class:Heaps
+printLeaves	./Heaps.java	/^  protected static void printLeaves() {$/;"	m	class:Heaps
+printLeftSubTree	./Heaps.java	/^  protected static void printLeftSubTree(int key) {$/;"	m	class:Heaps
+printRelatives	./Heaps.java	/^  protected static void printRelatives(int key) {$/;"	m	class:Heaps
+printRightSubTree	./Heaps.java	/^  protected static void printRightSubTree(int key) {$/;"	m	class:Heaps
+siftDown	./Heaps.java	/^ protected static void siftDown(int root) {$/;"	m	class:Heaps
+siftDown	./Heaps.java	/^ protected static void siftDown(int root, int pseudoLength) {$/;"	m	class:Heaps
+swap	./Basics.java	/^  public static void swap(int i, int j) {$/;"	m	class:Basics
+toString	./Complex.java	/^  public String toString() {$/;"	m	class:Complex

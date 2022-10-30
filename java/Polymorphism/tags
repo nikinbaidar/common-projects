@@ -1,0 +1,20 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/nikin/projects/common-projects/java/Polymorphism/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+Java	./Main.java	/^  Java(String name) {$/;"	m	class:Java
+Java	./Main.java	/^class Java extends ProgrammingLanguage {$/;"	c
+Main	./Main.java	/^public class Main {$/;"	c
+ProgrammingLanguage	./Main.java	/^  ProgrammingLanguage(String name) {$/;"	m	class:ProgrammingLanguage
+ProgrammingLanguage	./Main.java	/^class ProgrammingLanguage {$/;"	c
+Py	./Main.java	/^  Py(String name) {$/;"	m	class:Py
+Py	./Main.java	/^class Py extends ProgrammingLanguage {$/;"	c
+main	./Main.java	/^  public static void main(String[] args) {$/;"	m	class:Main
+name	./Main.java	/^  String name;$/;"	f	class:ProgrammingLanguage
