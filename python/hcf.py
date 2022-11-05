@@ -12,3 +12,15 @@ def gcd(num1,num2):
     return num2
 
 print(gcd(7,14));
+
+###
+print('hello world')
+###
+
+###
+print('test')
+print('test2')
+###
+
+print('Hello world')
+

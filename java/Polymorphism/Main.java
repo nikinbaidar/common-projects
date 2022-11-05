@@ -2,16 +2,17 @@ import java.lang.Math;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println(Math.PI);
-    System.out.println(Math.E);
-    System.out.println(Math.abs(-2));
-    System.out.println(Math.pow(5, 2));
+    Java obj_1 = new Java("Java");
+    Py obj_2 = new Py("Python");
+
+    System.out.println(obj_1.name);
+    System.out.println(obj_2.name);
   }
 }
 
 class ProgrammingLanguage {
   // A polymorphic variable
-  String name;
+  static String name;
 
   ProgrammingLanguage(String name) {
     this.name = name;

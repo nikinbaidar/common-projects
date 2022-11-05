@@ -1,0 +1,142 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/nikin/projects/common-projects/python/ImageProcessing/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+DFT	./dft2D.py	/^def DFT(intensity_image, shift=False):$/;"	f
+IDFT	./dft2D.py	/^def IDFT(frequency_image):$/;"	f
+NodeTree	./huffman_code.py	/^class NodeTree(object):$/;"	c
+_	./region_based_segmentation.py	/^markers, _ = nd.label(mask)$/;"	v
+__init__	./huffman_code.py	/^    def __init__(self, left=None, right=None):$/;"	m	class:NodeTree
+__str__	./huffman_code.py	/^    def __str__(self):$/;"	m	class:NodeTree
+a	./test.py	/^a  = np.array([np.arange(1,4), np.arange(4,7), np.arange(7,10)])$/;"	v
+addGaussianNoise	./create_noise.py	/^def addGaussianNoise(image, MEAN, VARIANCE):$/;"	f
+addPadding	./convolution.py	/^def addPadding(image, borderType='zero|replicate', depth=1):$/;"	f
+addSpeckleNoise	./create_noise.py	/^def addSpeckleNoise(image, scale):$/;"	f
+addSpeckleNoise2	./create_noise.py	/^def addSpeckleNoise2(image, MEAN, VARIANCE):$/;"	f
+applyBoxBlurring	./spatial_filtering.py	/^def applyBoxBlurring(src, size, strength=1):$/;"	f
+applyCanny	./edge_detection.py	/^def applyCanny(src, lower_bound, upper_bound, size=3):$/;"	f
+applyGaussinaSmoothing	./spatial_filtering.py	/^def applyGaussinaSmoothing(src, size, strength=1):$/;"	f
+applyLaplacianFilter	./spatial_filtering.py	/^def applyLaplacianFilter(src):$/;"	f
+applyPrewitt	./spatial_filtering.py	/^def applyPrewitt(src, size):$/;"	f
+applySobel	./spatial_filtering.py	/^def applySobel(src, size) :$/;"	f
+ax	./region_based_segmentation.py	/^ax = axes.ravel()$/;"	v
+axes	./region_based_segmentation.py	/^fig, axes = plt.subplots(ncols=3, figsize=(9, 3), sharex=True, sharey=True)$/;"	v
+children	./huffman_code.py	/^    def children(self):$/;"	m	class:NodeTree
+compressed	./run_length.py	/^compressed = [m, n]$/;"	v
+compressed	./run_length.py	/^compressed = np.array(compressed)$/;"	v
+computeCDF	./histogram_equalization.py	/^  def computeCDF(histogram):$/;"	f	function:equalilzeHistogram	file:
+conv	./image_restoration.py	/^import convolution as conv$/;"	I	nameref:module:convolution
+convolve	./convolution.py	/^def convolve(image, filter, mode=0, addBorder=False, borderType='zero'):$/;"	f
+current_pixel	./run_length.py	/^        current_pixel = image[i,j]$/;"	v
+current_pixel_count	./run_length.py	/^    current_pixel_count = 1$/;"	v
+cv	./convolution.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./edge_detection.py	/^import cv2 as cv $/;"	I	nameref:module:cv2
+cv	./entropy.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./image_restoration.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./morphological.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./otsu.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./region_based_segmentation.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./run_length.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+cv	./spatial_filtering.py	/^import cv2 as cv $/;"	I	nameref:module:cv2
+cv	./variable_length.py	/^import cv2 as cv$/;"	I	nameref:module:cv2
+dft	./image_restoration.py	/^import dft2D as dft$/;"	I	nameref:module:dft2D
+dilute	./morphological.py	/^def dilute(image, structuring_element):$/;"	f
+distance_map	./region_based_segmentation.py	/^distance_map = nd.distance_transform_edt(thresh)$/;"	v
+entropy	./variable_length.py	/^image_hist, entropy = getEntropy(image)$/;"	v
+equalilzeHistogram	./histogram_equalization.py	/^def equalilzeHistogram(histogram, resolution):$/;"	f
+erode	./morphological.py	/^def erode(image, structuring_element, addBorder=False, iterations=1):$/;"	f
+existing_pixels	./variable_length.py	/^existing_pixels = np.array([i for i in range(len(image_hist))$/;"	v
+fig	./region_based_segmentation.py	/^fig, axes = plt.subplots(ncols=3, figsize=(9, 3), sharex=True, sharey=True)$/;"	v
+freq	./huffman_code.py	/^freq = sorted(freq.items(), key=lambda x: x[1], reverse=True)$/;"	v
+freq	./huffman_code.py	/^freq = {}$/;"	v
+frequency2spatial	./dft2D.py	/^def frequency2spatial(frequency_image):$/;"	f
+getAnchor	./morphological.py	/^    def getAnchor(m,n):$/;"	f	function:dilute	file:
+getEntropy	./entropy.py	/^def getEntropy(image):$/;"	f
+getEntropy	./variable_length.py	/^def getEntropy(image):$/;"	f
+getFrequency	./dft2D.py	/^    def getFrequency(u, v):$/;"	f	function:DFT	file:
+getGaussianFilter	./image_restoration.py	/^def getGaussianFilter(size, sigma=1.0):$/;"	f
+getGaussianFilter	./spatial_filtering.py	/^    def getGaussianFilter(size, sigma=1.0):$/;"	f	function:applyGaussinaSmoothing	file:
+getGaussianFilterUsingLoop	./spatial_filtering.py	/^    def getGaussianFilterUsingLoop(size):$/;"	f	function:applyGaussinaSmoothing	file:
+getHist	./entropy.py	/^def getHist(image):$/;"	f
+getIntensity	./dft2D.py	/^    def getIntensity(u, v):$/;"	f	function:IDFT	file:
+getIntraCLassVariance	./otsu.py	/^    def getIntraCLassVariance(threshold):$/;"	f	function:main	file:
+houghTransform	./edge_detection.py	/^def houghTransform(src):$/;"	f
+huffmanCode	./huffman_code.py	/^huffmanCode = huffman_code_tree(nodes[0][0])$/;"	v
+huffman_code_tree	./huffman_code.py	/^def huffman_code_tree(node, left=True, binString=''):$/;"	f
+image	./run_length.py	/^image = np.array([$/;"	v
+image	./typecasting_images.py	/^image = numpy.array([0, 0.5, 0.503, 1.])$/;"	v
+image	./typecasting_images.py	/^image = skimage.util.img_as_float(image)$/;"	v
+image	./typecasting_images.py	/^image = skimage.util.img_as_ubyte(image)$/;"	v
+image	./variable_length.py	/^image = cv.imread('.\/images\/Lenna.png', 0);$/;"	v
+image_hist	./variable_length.py	/^image_hist, entropy = getEntropy(image)$/;"	v
+local_max	./region_based_segmentation.py	/^local_max = peak_local_max(distance_map, min_distance=20, labels=thresh)$/;"	v
+logarithmically_transform	./logarithmic_transformation.py	/^def logarithmically_transform(image, output_datatype=numpy.uint8):$/;"	f
+m	./run_length.py	/^m, n = image.shape[0], image.shape[1]$/;"	v
+main	./contrast_streching.py	/^def main():$/;"	f
+main	./convolution.py	/^def main():$/;"	f
+main	./create_noise.py	/^def main():$/;"	f
+main	./dft2D.py	/^def main():$/;"	f
+main	./edge_detection.py	/^def main():$/;"	f
+main	./entropy.py	/^def main():$/;"	f
+main	./histogram_equalization.py	/^def main():$/;"	f
+main	./image_restoration.py	/^def main():$/;"	f
+main	./logarithmic_transformation.py	/^def main():$/;"	f
+main	./morphological.py	/^def main():$/;"	f
+main	./otsu.py	/^def main():$/;"	f
+main	./spatial_filtering.py	/^def main():$/;"	f
+mapping	./variable_length.py	/^mapping = {existing_pixels[i]: pixel_frequencies[i] for i in range(len(existing_pixels))}$/;"	v
+mapping_sorted	./variable_length.py	/^mapping_sorted = sorted(mapping.items(), key=lambda x:x[1])$/;"	v
+markers	./region_based_segmentation.py	/^markers, _ = nd.label(mask)$/;"	v
+mask	./region_based_segmentation.py	/^mask = np.zeros_like(distance_map, dtype=bool)$/;"	v
+medianFilter	./convolution.py	/^def medianFilter(image, k, addBorder=False):$/;"	f
+minFilter	./convolution.py	/^def minFilter(image, k, addBorder=False):$/;"	f
+n	./run_length.py	/^m, n = image.shape[0], image.shape[1]$/;"	v
+nd	./region_based_segmentation.py	/^import scipy.ndimage as nd$/;"	I	nameref:module:scipy.ndimage
+new	./region_based_segmentation.py	/^new = watershed(-distance_map, markers, mask=src)$/;"	v
+node	./huffman_code.py	/^    node = NodeTree(key1, key2)$/;"	v
+nodes	./huffman_code.py	/^    def nodes(self):$/;"	m	class:NodeTree
+nodes	./huffman_code.py	/^    nodes = nodes[:-2]$/;"	v
+nodes	./huffman_code.py	/^    nodes = sorted(nodes, key=lambda x: x[1], reverse=True)$/;"	v
+nodes	./huffman_code.py	/^nodes = freq$/;"	v
+nodes	./variable_length.py	/^nodes = mapping_sorted$/;"	v
+np	./convolution.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./dft2D.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./edge_detection.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./entropy.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./image_restoration.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./morphological.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./otsu.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./region_based_segmentation.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./run_length.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./spatial_filtering.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./test.py	/^import numpy as np$/;"	I	nameref:module:numpy
+np	./variable_length.py	/^import numpy as np$/;"	I	nameref:module:numpy
+padding	./image_restoration.py	/^def padding(image, wanted_depth):$/;"	f
+pause	./convolution.py	/^def pause():$/;"	f
+pixel_frequencies	./variable_length.py	/^pixel_frequencies = np.array([int(image_hist[i][0])$/;"	v
+pixels	./run_length.py	/^pixels = []$/;"	v
+plotHistogram	./contrast_streching.py	/^def plotHistogram(image_histogram, processed_image_histogram, plotTitle=""):$/;"	f
+plotHistogram	./create_noise.py	/^def plotHistogram(processed_image, plotTitle="", bins=256):$/;"	f
+plotHistogram	./logarithmic_transformation.py	/^def plotHistogram(input_image, processed_image, plotTitle="", bins=256):$/;"	f
+plt	./image_restoration.py	/^from matplotlib import pyplot as plt$/;"	x	nameref:unknown:pyplot
+plt	./region_based_segmentation.py	/^import matplotlib.pyplot as plt$/;"	I	nameref:module:matplotlib.pyplot
+ranges	./test.py	/^ranges = {$/;"	v
+remapTheta	./edge_detection.py	/^    def remapTheta(theta):$/;"	f	function:applyCanny	file:
+remapTheta	./test.py	/^def remapTheta(value):$/;"	f
+removePadding	./convolution.py	/^def removePadding(paddedImage, depth=1):$/;"	f
+replicateBorder	./convolution.py	/^    def replicateBorder(image):$/;"	f	function:addPadding	file:
+resetCounter_UpdateList	./run_length.py	/^def resetCounter_UpdateList():$/;"	f
+spatial2frequency	./dft2D.py	/^def spatial2frequency(intensity_image, shift=False):$/;"	f
+src	./region_based_segmentation.py	/^src = cv.imread(".\/images\/stock-photo.duckduckgo.com.jpg", 0)$/;"	v
+strechContrast	./contrast_streching.py	/^def strechContrast(image, hist):$/;"	f
+string	./huffman_code.py	/^string = 'BCAADDDCCACACAC'$/;"	v
+thresh	./region_based_segmentation.py	/^thresh = cv.threshold(src, 0, 255, cv.THRESH_BINARY + cv.THRESH_OTSU)[1]$/;"	v
+transformHistogram	./histogram_equalization.py	/^def transformHistogram(image):$/;"	f
+zeroPadding	./convolution.py	/^    def zeroPadding(image):$/;"	f	function:addPadding	file:

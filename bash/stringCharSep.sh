@@ -1,20 +1,27 @@
 #! /bin/bash
 
-function len() {
-    length=$( echo -n "$1" | wc -m )
-    return ${length}
-}
+# function len() {
+#     length=$( echo -n "$1" | wc -m )
+#     return ${length}
+# }
 
-clear
+# clear
 
-echo Enter a word:
-read word
+# echo Enter a word:
+# read word
 
-len "${word}"
-length=$?
+# len "${word}"
+# length=$?
 
-echo Length of ${word} is ${length}
+# echo Length of ${word} is ${length}
 
-for charcater in $(seq 1 ${length}) ; do
-    echo ${word} | cut -c ${charcater}
-done
+# for charcater in $(seq 1 ${length}) ; do
+#     echo ${word} | cut -c ${charcater}
+# done
+
+echo "Enter string"
+read str
+
+if ! [ -z "${str}" ] ; then
+  echo This is correct
+fi

@@ -1,4 +1,5 @@
-# !/usr/bin/env python
+#! /usr/bin/env python
+#
 #  /"\/\_..---------------------------------------------._/\/"\
 # (     _|| Filename    : entropy.py                   ||_     )
 #  \_/\/ || Maintainer  : Nikin Baidar                 || \/\_/
@@ -14,13 +15,13 @@ import skimage.measure
 
 def getHist(image):
     return np.array([len(np.nonzero(image == pixel)[0])
-        for pixel in range(256)]).reshape(256, 1)
+        for pixel in range(256)])
 
 
 def getEntropy(image):
     img_hist = getHist(image)
     resolution = image.size
-    probability = np.array([ (img_hist[i]/resolution)[0]
+    probability = np.array([ (img_hist[i]/resolution)
         for i in range(256) if img_hist[i] ])
     return (-1) * np.sum(probability * np.log2(probability))
 

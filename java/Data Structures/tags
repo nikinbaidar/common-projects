@@ -15,7 +15,7 @@ Complex	./Complex.java	/^  public Complex () {$/;"	m	class:Complex
 Complex	./Complex.java	/^  public Complex(int a) {$/;"	m	class:Complex
 Complex	./Complex.java	/^  public Complex(int a, int b){$/;"	m	class:Complex
 Complex	./Complex.java	/^public class Complex {$/;"	c
-HeapSort	./Heaps.java	/^  protected static void HeapSort() {$/;"	m	class:Heaps
+HeapSort	./Heaps.java	/^  protected void HeapSort() {$/;"	m	class:Heaps
 Heaps	./Heaps.java	/^  Heaps(int [] heap) {$/;"	m	class:Heaps
 Heaps	./Heaps.java	/^public class Heaps {$/;"	c
 Logarithms	./Logarithms.java	/^public class Logarithms {$/;"	c
@@ -25,8 +25,8 @@ Maths	./Maths.java	/^public class Maths {$/;"	c
 Test	./Main.java	/^class Test {$/;"	c
 a	./Complex.java	/^  private int a, b;$/;"	f	class:Complex	file:
 b	./Complex.java	/^  private int a, b;$/;"	f	class:Complex	file:
-buildMaxHeap	./Heaps.java	/^ private static void buildMaxHeap() {$/;"	m	class:Heaps	file:
-buildMaxHeap	./Heaps.java	/^ protected static void buildMaxHeap(int pseudoLength) {$/;"	m	class:Heaps
+buildMaxHeap	./Heaps.java	/^ private void buildMaxHeap() {$/;"	m	class:Heaps	file:
+buildMaxHeap	./Heaps.java	/^ protected void buildMaxHeap(int pseudoLength) {$/;"	m	class:Heaps
 ceil	./Maths.java	/^  public static int ceil (double a) {$/;"	m	class:Maths
 datastructures.queues	./Heaps.java	/^package datastructures.queues;$/;"	p
 datastructures.util	./Arrays.java	/^package datastructures.util;$/;"	p
@@ -34,33 +34,33 @@ datastructures.util	./Complex.java	/^package datastructures.util;$/;"	p
 datastructures.util	./Logarithms.java	/^package datastructures.util;$/;"	p
 datastructures.util	./Maths.java	/^package datastructures.util;$/;"	p
 datastructures.utilities	./Basics.java	/^package datastructures.utilities;$/;"	p
-depth	./Heaps.java	/^  static int depth;$/;"	f	class:Heaps
+depth	./Heaps.java	/^  int depth;$/;"	f	class:Heaps
 display	./Main.java	/^  public void display() {$/;"	m	class:Main
 display	./Main.java	/^  public void display() {$/;"	m	class:Test
-exists	./Heaps.java	/^ private static boolean exists(int node) {$/;"	m	class:Heaps	file:
-exists	./Heaps.java	/^ public static boolean exists(int node, int lastNode) {$/;"	m	class:Heaps
+exists	./Heaps.java	/^ private boolean exists(int node) {$/;"	m	class:Heaps	file:
+exists	./Heaps.java	/^ public boolean exists(int node, int lastNode) {$/;"	m	class:Heaps
 floor	./Maths.java	/^  public static int floor (double a) {$/;"	m	class:Maths
-getLeafNodes	./Heaps.java	/^  private static int[] getLeafNodes() {$/;"	m	class:Heaps	file:
+getLeafNodes	./Heaps.java	/^  private int[] getLeafNodes() {$/;"	m	class:Heaps	file:
 getNumLevels	./Heaps.java	/^  private int getNumLevels() {$/;"	m	class:Heaps	file:
-heap	./Heaps.java	/^  static int [] heap;$/;"	f	class:Heaps
-iLeftChild	./Heaps.java	/^  private static int iLeftChild(int key) {$/;"	m	class:Heaps	file:
-iLevel	./Heaps.java	/^  private static int iLevel(int key) {$/;"	m	class:Heaps	file:
-iParent	./Heaps.java	/^  private static int iParent(int key) {$/;"	m	class:Heaps	file:
-iRightChild	./Heaps.java	/^  private static int iRightChild(int key) {$/;"	m	class:Heaps	file:
-iSibling	./Heaps.java	/^  private static int iSibling(int key) {$/;"	m	class:Heaps	file:
-iSwap	./Heaps.java	/^  private static void iSwap(int i, int j) {$/;"	m	class:Heaps	file:
+heap	./Heaps.java	/^  int [] heap;$/;"	f	class:Heaps
+iLeftChild	./Heaps.java	/^  private int iLeftChild(int key) {$/;"	m	class:Heaps	file:
+iLevel	./Heaps.java	/^  private int iLevel(int key) {$/;"	m	class:Heaps	file:
+iParent	./Heaps.java	/^  private int iParent(int key) {$/;"	m	class:Heaps	file:
+iRightChild	./Heaps.java	/^  private int iRightChild(int key) {$/;"	m	class:Heaps	file:
+iSibling	./Heaps.java	/^  private int iSibling(int key) {$/;"	m	class:Heaps	file:
+iSwap	./Heaps.java	/^  private void iSwap(int i, int j) {$/;"	m	class:Heaps	file:
 isEven	./Maths.java	/^  public static boolean isEven(int a) {$/;"	m	class:Maths
-isLeafNode	./Heaps.java	/^  private static boolean isLeafNode(int key) {$/;"	m	class:Heaps	file:
+isLeafNode	./Heaps.java	/^  protected boolean isLeafNode(int key) {$/;"	m	class:Heaps
 isOdd	./Maths.java	/^  public static boolean isOdd(int a) {$/;"	m	class:Maths
 log2	./Maths.java	/^  public static double log2(double a) {$/;"	m	class:Maths
 main	./Heaps.java	/^  public static void main(String[] args) {$/;"	m	class:Main
 main	./Main.java	/^  public static void main(String[] args) {$/;"	m	class:Main
-printHeap	./Heaps.java	/^  protected static void printHeap() {$/;"	m	class:Heaps
-printLeaves	./Heaps.java	/^  protected static void printLeaves() {$/;"	m	class:Heaps
-printLeftSubTree	./Heaps.java	/^  protected static void printLeftSubTree(int key) {$/;"	m	class:Heaps
-printRelatives	./Heaps.java	/^  protected static void printRelatives(int key) {$/;"	m	class:Heaps
-printRightSubTree	./Heaps.java	/^  protected static void printRightSubTree(int key) {$/;"	m	class:Heaps
-siftDown	./Heaps.java	/^ protected static void siftDown(int root) {$/;"	m	class:Heaps
-siftDown	./Heaps.java	/^ protected static void siftDown(int root, int pseudoLength) {$/;"	m	class:Heaps
+printHeap	./Heaps.java	/^  protected void printHeap() {$/;"	m	class:Heaps
+printLeaves	./Heaps.java	/^  protected void printLeaves() {$/;"	m	class:Heaps
+printLeftSubTree	./Heaps.java	/^  protected void printLeftSubTree(int key) {$/;"	m	class:Heaps
+printRelatives	./Heaps.java	/^  protected void printRelatives(int key) {$/;"	m	class:Heaps
+printRightSubTree	./Heaps.java	/^  protected void printRightSubTree(int key) {$/;"	m	class:Heaps
+siftDown	./Heaps.java	/^ protected void siftDown(int root) {$/;"	m	class:Heaps
+siftDown	./Heaps.java	/^ protected void siftDown(int root, int pseudoLength) {$/;"	m	class:Heaps
 swap	./Basics.java	/^  public static void swap(int i, int j) {$/;"	m	class:Basics
 toString	./Complex.java	/^  public String toString() {$/;"	m	class:Complex

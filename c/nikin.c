@@ -3,6 +3,14 @@
 
 # include "nikin.h"
 
+void printArr(int *array, int length) 
+{  
+    printf("{");
+    for (int i = 0; i < length; i++)  
+        printf("%d, ", *(array+i));  
+    printf("\b\b}");
+}
+
 int main () {
 
     struct Point *A;

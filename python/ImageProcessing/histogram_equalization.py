@@ -7,11 +7,12 @@
 #   |   _____________________________________________________|_
 #    \_/_______________________________________________________/
 
-
+import numpy
+import cv2
 from matplotlib import pyplot
 
-import cv2
-import numpy
+from contrast_streching import plotHistogram
+from convolution import pause
 
 
 def equalilzeHistogram(histogram, resolution):
@@ -66,12 +67,12 @@ def equalilzeHistogram(histogram, resolution):
 
 def transformHistogram(image):
 
-  rows        = image.shape[0]
-  columns     = image.shape[1]
+  rows = image.shape[0]
+  columns = image.shape[1]
   resolution  = rows * columns
 
-  image_histogram = cv2.calcHist([image], [0], None, [256], [0,255])
-  hist_equalized  = equalilzeHistogram(image_histogram, resolution)
+  image_histogram = cv2.calcHist([image], [0], None, [256], [0, 255])
+  hist_equalized = equalilzeHistogram(image_histogram, resolution)
 
   # List all unique pixel intensity values in the image
   existing_pixels = [value for value in range(256) if image_histogram[value]]
@@ -79,11 +80,15 @@ def transformHistogram(image):
   # Replace existing pixels with the new (equalized) histogram values
   for i in range(rows):
     for j in range(columns):
-      index       = existing_pixels.index(image[i,j])
+      index = existing_pixels.index(image[i,j])
       replacement = hist_equalized[index]
-      image[i,j]  = replacement
+      image[i,j] = replacement
 
   image = numpy.array(image, dtype=numpy.uint8)
+
+  transformed_histogram = cv2.calcHist([image], [0], None, [256], [0, 255])
+
+  plotHistogram(image_histogram, transformed_histogram)
 
   return image
 
@@ -91,10 +96,6 @@ def transformHistogram(image):
 def main():
 
   # image = cv2.imread("./images/Lenna.png", 0)
-
-  # # Display the input image
-  # cv2.imshow("Original", image)
-  # cv2.waitKey()
 
   image = numpy.array([[52, 55, 61,  59,  70,  61, 76, 61],
                        [62, 59, 55, 104,  94,  85, 59, 71],
@@ -106,16 +107,18 @@ def main():
                        [70, 87, 69,  68,  65,  73, 78, 90]], 
                        dtype=numpy.uint8)
   
+  print("Original")
   print(image)
 
   transfomred_image = transformHistogram(image)
-
   print()
+  print("Transformed")
   print(transfomred_image)
 
-  # # Display Transformed Image
+  # Display Transformed Image
   # cv2.imshow("Transformed", transfomred_image)
-  # cv2.waitKey()
+  # cv2.imshow("Original", image)
+  # pause()
  
 if __name__ == '__main__':
   main()

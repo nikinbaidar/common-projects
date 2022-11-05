@@ -18,24 +18,25 @@ import spatial_filtering
 def applyCanny(src, lower_bound, upper_bound, size=3):
     """ Canny edge detection. """
 
-    def remapTheta(value):
+    def remapTheta(theta):
         ''' Maps a given angle to one of 0, 45, 90 and 135.'''
-        value = int(np.ceil(value)) % 180
+        theta = int(np.ceil(theta)) % 180
         for boundary in ranges.keys():
-            if (boundary[0] <= value) and (value < boundary[1]):
+            if (boundary[0] <= theta) and (theta < boundary[1]):
                 mapping = ranges[boundary]
                 return mapping
 
     src = src * 1.0
     m, n = src.shape[0], src.shape[1]
+
     strong_edge = upper_bound  
 
     ranges = {
                 (0, 22.5)      : 0,
-                (157.5, 181)   : 0,
                 (22.5, 67.5)   : 45,
                 (67.5, 112.5)  : 90,
                 (112.5, 157.5) : 135,
+                (157.5, 181)   : 0,
             }
 
     # Apply gaussian filter of kernel size 3x3
@@ -115,10 +116,10 @@ def main():
     edges_canny = applyCanny(src, 80, 100)
     edges_canny_cv = cv.Canny(src, 80, 100)
 
-    cv.imshow("Edge detection using built in ", edges_canny_cv)
-    cv.imshow("Edge detection using Canny edge algorithm", edges_canny)
+    cv.imshow("Title: Edge detection using built in ", edges_canny_cv)
+    cv.imshow("Title: Edge detection using Canny edge algorithm", edges_canny)
 
-    cv.imshow("Source", src)
+    cv.imshow("Title: Source", src)
     pause();
 
 if __name__ == '__main__':

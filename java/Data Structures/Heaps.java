@@ -1,3 +1,9 @@
+package datastructures.queues;
+
+import java.util.Arrays;
+import java.util.ArrayList;
+import datastructures.util.Maths;
+
 /* Problem Set 1: Query
  * ====================
  * Assumptions:
@@ -46,27 +52,19 @@
  * P3.2 [ ] Floyd's Variation.
  */
 
-package datastructures.queues;
-
-import java.util.Arrays;
-import java.util.ArrayList;
-import datastructures.util.Maths;
-
-
 class Main {
   public static void main(String[] args) {
     // int [] x = { 100, 19, 36, 17, 12, 25, 5, 9, 15, 6, 11, 13, 8, 1, 4 };  
     int [] y = { 19, 36, 17, 12, 25, 100, 5, 9, 15, 30, 6, 11, 13, 8, 1 };  
     Heaps heap = new Heaps(y);
-    heap.printHeap();
     heap.HeapSort();
   }
 }
 
 public class Heaps {
 
-  static int [] heap;
-  static int depth;
+  int [] heap;
+  int depth;
 
   Heaps(int [] heap) {
     this.heap = Arrays.copyOfRange(heap, 0, heap.length);
@@ -77,11 +75,11 @@ public class Heaps {
     return Maths.ceil(Maths.log2(heap.length));
   }
 
-  private static int iLevel(int key) {
+  private int iLevel(int key) {
     return Maths.floor(Maths.log2(key + 1));
   }
 
-  private static int iParent(int key) {
+  private int iParent(int key) {
     /* Root node does not have a parent. */
     if (key != 0) {
       return (key - 1) / 2;
@@ -89,21 +87,21 @@ public class Heaps {
     return -1;
   }
 
-  private static int iLeftChild(int key) {
+  private int iLeftChild(int key) {
     if ((2*key + 1) < heap.length)
       return (2*key + 1);
     return -1;
   }
 
 
-  private static int iRightChild(int key) {
+  private int iRightChild(int key) {
     if ((2*key + 2) < heap.length)
       return (2*key + 2);
     return -1;
   }
 
 
-  private static int iSibling(int key) {
+  private int iSibling(int key) {
     if (key != 0) {
       if (Maths.isEven(key) && (key-1) < heap.length) { return (key-1); }
       if (Maths.isOdd(key)  && (key+1) < heap.length) { return (key+1); }
@@ -112,25 +110,25 @@ public class Heaps {
   }
 
 
-  private static boolean isLeafNode(int key) {
+  protected boolean isLeafNode(int key) {
     return (iLeftChild(key) == iRightChild(key));
   }
 
 
-  private static int[] getLeafNodes() {
+  private int[] getLeafNodes() {
     int leaf_count = Maths.ceil((heap.length + 1) / 2);
     return Arrays.copyOfRange(heap, (heap.length - leaf_count), heap.length);
   }
 
 
-  private static void iSwap(int i, int j) {
+  private void iSwap(int i, int j) {
     heap[i] = heap[i] - heap[j];
     heap[j] = heap[i] + heap[j];
     heap[i] = heap[j] - heap[i];
   }
 
 
- private static void buildMaxHeap() {
+ private void buildMaxHeap() {
    for (int i = iParent(heap.length - 1); i >= 0; i--) {
      /* Repair the sub-heap whose root is at index "i". */
      siftDown(i);
@@ -138,12 +136,12 @@ public class Heaps {
  }
 
 
- private static boolean exists(int node) {
+ private boolean exists(int node) {
    return node != -1;
  }
 
 
- protected static void siftDown(int root) {
+ protected void siftDown(int root) {
      int parent, leftChild;
 
      while (exists(iLeftChild(root))) {
@@ -169,7 +167,7 @@ public class Heaps {
    }
 
 
- protected static void buildMaxHeap(int pseudoLength) {
+ protected void buildMaxHeap(int pseudoLength) {
    for (int i = iParent(pseudoLength - 1); i>=0; i--) {
 
      /* Siftdown. But now, if the root node contains a leftchild we also check
@@ -186,12 +184,12 @@ public class Heaps {
  }
 
 
- public static boolean exists(int node, int lastNode) {
+ public boolean exists(int node, int lastNode) {
    return (exists(node) && node <= lastNode);
  }
 
 
- protected static void siftDown(int root, int pseudoLength) {
+ protected void siftDown(int root, int pseudoLength) {
      int parent, leftChild;
 
      while (exists(iLeftChild(root), pseudoLength)) {
@@ -216,7 +214,7 @@ public class Heaps {
      }
    }
 
-  protected static void HeapSort() {
+  protected void HeapSort() {
 
     int pseudoLength = heap.length;
 
@@ -235,7 +233,7 @@ public class Heaps {
   }
 
 
-  protected static void printHeap() {
+  protected void printHeap() {
     /* (i) We can find the number of nodes in each level of a binary tree by
      * raising 2 to the power of level#. (ii) The index of the left most node
      * on a particular level of the heap is obtained by subtracting one from
@@ -309,12 +307,12 @@ public class Heaps {
     System.out.println('\n');
   }
 
-  protected static void printLeaves() {
+  protected void printLeaves() {
     System.out.println("LEAF NODES: " + Arrays.toString(getLeafNodes()) + "\n");
   }
 
 
-  protected static void printRelatives(int key) {
+  protected void printRelatives(int key) {
     String [] relations = {
       "Current Node",
       "Parent",
@@ -344,7 +342,7 @@ public class Heaps {
   }
 
 
-  protected static void printLeftSubTree(int key) {
+  protected void printLeftSubTree(int key) {
     ArrayList<Integer> lsubtree = new ArrayList<Integer>();
     int left_child;
     lsubtree.add(heap[key]);
@@ -361,7 +359,8 @@ public class Heaps {
     System.out.println(lsubtree);
   }
 
-  protected static void printRightSubTree(int key) {
+
+  protected void printRightSubTree(int key) {
     ArrayList<Integer> rsubtree = new ArrayList<Integer>();
     int right_child;
     rsubtree.add(heap[key]);
@@ -376,10 +375,4 @@ public class Heaps {
     }
     System.out.println("Right Sub Tree: " + rsubtree);
   }
-
-
-
-
-
-
 } 

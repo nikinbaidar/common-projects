@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # WAP to input a number, if it is not a number then generate an error message
 
+import numpy as np
+
+x = np.zeros(3)
+
+
 x = [4, 0, 65, 'a']
 
 for item in x:
@@ -13,5 +18,5 @@ for item in x:
   else:
     print(r)
 
-print()
-raise MemoryError("Nikin Baidar")
+# print()
+# raise MemoryError("Nikin Baidar")

@@ -12,7 +12,6 @@
 #                                                       /    ) |
 #                                                      '  _.'  |
 #                                                      '-'/    \
-#
 
 from matplotlib import pyplot
 

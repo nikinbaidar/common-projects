@@ -17,4 +17,4 @@ ProgrammingLanguage	./Main.java	/^class ProgrammingLanguage {$/;"	c
 Py	./Main.java	/^  Py(String name) {$/;"	m	class:Py
 Py	./Main.java	/^class Py extends ProgrammingLanguage {$/;"	c
 main	./Main.java	/^  public static void main(String[] args) {$/;"	m	class:Main
-name	./Main.java	/^  String name;$/;"	f	class:ProgrammingLanguage
+name	./Main.java	/^  static String name;$/;"	f	class:ProgrammingLanguage
