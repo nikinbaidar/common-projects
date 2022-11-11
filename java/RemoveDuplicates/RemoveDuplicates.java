@@ -10,13 +10,10 @@ class Solution {
 
         for (int i=0; i < nums.length; i++) {
             if (! map.containsKey(nums[i])) {
-                map.put(nums[i], k);          
+                map.put(nums[i], i);  // Map each element to its orginal index
+                nums[k] = nums[i];
                 k++;
             }
-        }
-
-        for (int i : map.keySet()) {
-            nums[map.get(i)] = i;
         }
 
         return k;
@@ -31,7 +28,7 @@ class Solution {
         // 0 1 2 3 4
         int k;
         k = obj.removeDuplicates(nums);
-        System.out.println(k);
-        System.out.println(Arrays.toString(nums));
+        System.out.println("Total number of unique items = " + k);
+        System.out.println(Arrays.toString(nums[0]));
     }
 }
