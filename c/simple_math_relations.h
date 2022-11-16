@@ -1,18 +1,33 @@
-static int isEven(int a);
-static int isFactor(int a, int b);
+static bool isEven(int a);
+static bool isFactor(int a, int b);
+static bool inRange(int a, int lower, int upper);
+static int power(int x, int n);
 
-static int inRange(int a, int lower, int upper);
-
-int isFactor(int a, int b) {
+bool 
+isFactor(int a, int b) 
+{
   return ((a/b) * b == a) ? 1 : 0;
 }
 
 
-int isEven(int a) {
+bool
+isEven(int a) 
+{
   return !(a & 1);
 }
 
 
-int inRange(int a, int lower, int upper) {
+bool 
+inRange(int a, int lower, int upper) 
+{
   return (a >= lower && a <= upper);
+}
+
+
+int
+power(int x, int n)
+{
+    int result;
+    result = (n/2 > 0) ? x * power(x, n/2 - 1) : 1;
+    return  isEven(n) ? result * result : x * result * result;
 }

@@ -1,5 +1,13 @@
 #define getSize(arr) sizeof(arr)/sizeof(*arr)
 
+static int testArr [] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
+
+static void printArr(int *array, const size_t lengthOfArray);
+static int binarySearch(int x, int *arr, int start, int end);
+static int ternarySearch(int x, int *arr, int start, int end);
+static int contains(int x, int *arr, const size_t lengthOfArray);
+
+
 void 
 printArr(int *array, const size_t lengthOfArray) 
 {  
@@ -41,14 +49,3 @@ contains(int x, int *arr, const size_t lengthOfArray)
     int result = binarySearch(x, arr, 0, lengthOfArray);
     return (result != -1);
 }
-
-
-
-
-
-// int
-// main() 
-// {
-//     int a [] = {5, 6, 9, 10, 13, 14, 14, 15, 16, 19, 21, 30, 31};
-//     printArr(a, getSize(a));
-// }
