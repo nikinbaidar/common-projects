@@ -1,7 +1,10 @@
+#include <math.h>
+
 static bool isEven(int a);
 static bool isFactor(int a, int b);
 static bool inRange(int a, int lower, int upper);
-static int power(int x, int n);
+static float getDecimalPart(float num);
+static double power(double x, double n);
 
 bool 
 isFactor(int a, int b) 
@@ -24,10 +27,19 @@ inRange(int a, int lower, int upper)
 }
 
 
-int
-power(int x, int n)
+float
+getDecimalPart(float num) 
 {
-    int result;
-    result = (n/2 > 0) ? x * power(x, n/2 - 1) : 1;
-    return  isEven(n) ? result * result : x * result * result;
+    return (num - (int) num);
 }
+
+
+double
+power(double x, double n)
+{
+    double result;
+    result = (floor(n/2) > 0) ? x * power(x, floor(n/2) - 1) : 1;
+    return isEven(n) ? result * result : x * result * result;
+}
+
+

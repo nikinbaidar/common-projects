@@ -2,19 +2,19 @@
 
 static int testArr [] = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55};
 
-static void printArr(int *array, const size_t lengthOfArray);
+static void print(int *array, const size_t lengthOfArray);
 static int binarySearch(int x, int *arr, int start, int end);
 static int ternarySearch(int x, int *arr, int start, int end);
 static int contains(int x, int *arr, const size_t lengthOfArray);
 
 
 void 
-printArr(int *array, const size_t lengthOfArray) 
+print(int *array, const size_t lengthOfArray) 
 {  
-    printf("{");
+    printf("[");
     for (int i = 0; i < lengthOfArray; i++)  
         printf("%d, ", *(array+i));  
-    printf("\b\b}\n");
+    printf("\b\b]\n");
 }
 
 
