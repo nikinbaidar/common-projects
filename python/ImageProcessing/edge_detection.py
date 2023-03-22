@@ -116,10 +116,10 @@ def main():
     edges_canny = applyCanny(src, 80, 100)
     edges_canny_cv = cv.Canny(src, 80, 100)
 
-    cv.imshow("Title: Edge detection using built in ", edges_canny_cv)
-    cv.imshow("Title: Edge detection using Canny edge algorithm", edges_canny)
+    cv.imshow("Edge detection using built in ", edges_canny_cv)
+    cv.imshow("Edge detection using Canny edge algorithm", edges_canny)
 
-    cv.imshow("Title: Source", src)
+    cv.imshow("Source", src)
     pause();
 
 if __name__ == '__main__':

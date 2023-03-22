@@ -100,9 +100,9 @@ def main():
     #####################
 
     # g_blurred_image_1 = applyGaussinaSmoothing(src, 3)
-    # g_blurred_image_9 = applyGaussinaSmoothing(src, 3, 9)
+    g_blurred_image = applyGaussinaSmoothing(src, 3, 10)
     # cv.imshow("Gaussian blur output strength: 1", g_blurred_image_1)
-    # cv.imshow("Gaussian blur output strength: 9", g_blurred_image_9)
+    cv.imshow("Gaussian blur output strength: 9", g_blurred_image)
 
     ################
     # Box blurring #
