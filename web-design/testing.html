@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+    <link rel="stylesheet" href="testing.css" type="text/css">
+    <!-- <link rel="import" href="./navabr.html"> -->
+    <title>Wiki</title>
+
+  </head>
+  <body>
+    <nav>
+      <ul class="nav_items">
+        <li><a href="">Home</a></li>
+        <li><a href="./query_all_selectors.html">Projects</a></li>
+        <li><a href="">Forums</a></li>
+        <li><a href="./testing.html" style="color:var(--current-page);">Wiki</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Support</a></li>
+        <li><a href="./fakebook/fakebook.html">Log In</a></li>
+      </ul>
+      <img src="headlogo2.png" alt="Site Logo"/>
+    </nav>
+
+    <section>
+      <div id="leftsidebar">
+        <ul class="headings">
+          <li>Item number one</li>
+            <ul class="subtopics">
+              <li>Sub 1</li>
+              <li>Sub 2</li>
+            </ul>
+          <li>How To</li>
+            <ul class="subtopics">
+              <li>Arduino</li>
+              <li>ESP32</li>
+              <li>Raspberry Pi</li>
+            </ul>
+          <li>Nerding Out</li>
+            <ul class="subtopics">
+              <li>Beizer Curves</li>
+            </ul>
+        </ul>
+      </div>
+
+      <div id="main">
+        <div class="dropdown">
+          <p>Select an option:</p>
+          <select name="semesters" id="semesters">
+              <option value="1">First</option>
+              <option value="2">Second</option>
+              <option value="3">Third</option>
+              <option value="4">Fourth</option>
+              <option value="5">Fifth</option>
+              <option value="6">Sixth</option>
+              <option value="7">Seventh</option>
+              <option value="8">Eight</option>
+          </select>
+        </div>
+        
+        <div class="grid-container">
+          <div class="grid-item">
+            <p>One</p>
+          </div>
+          <div class="grid-item">
+            <p>Two</p>
+          </div>
+          <div class="grid-item">
+            <p>Three</p>
+          </div>
+        <!-- </div> -->
+        <!-- <div id="rowTwo"> -->
+          <div class="grid-item">
+            <p>Four</p>
+          </div>
+          <div class="grid-item">
+            <p>Five</p>
+          </div>
+          <div class="grid-item">
+            <p>Six</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="rightsidebar">
+        <div class="addspace">
+          <p>Ad Space?</p>
+        </div>
+      </div>
+    </section>
+    <script defer src="testing.js"></script>
+  </body>
+</html>

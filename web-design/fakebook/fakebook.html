@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport"  content="width=device-width, height=device-height initial-scale=1" />
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" type="text/css" href="fakebook.css" />
+  <title>Fakebook - log in or sign up</title>
+</head>
+<body>
+  <div id="box1">
+    <div id="brandMessage">
+      <img src="images/fakebook.png" alt="fakebook logo">
+      <h2>Connect with friends and the world around you on Fakebook.</h2>
+    </div>
+    <div id="userInteraction">
+      <div id="prompt">
+        <form name="login-or-signup" method="get" accept-charset="utf-8" autocomplete="off">
+          <input id="userName" class="prompt" type="text" placeholder="Email or phone number" name="username"/>
+          <input id="userPassword" class="prompt" type="password" placeholder="Password" name="password"/>
+          <input id="loginButton" type="submit" value="Log In">
+          <a id="forgotPassword" href="https://www.url.com">
+            Forgot password?
+          </a>
+          <hr>
+          <input id="newAccountButton" type="button" value="Create new account">
+        </form>
+      </div>
+        <span>
+          <p>
+          <a href="http://www.url.com" target="_blank"><strong>Create a Page</strong></a>
+          for a celebrity, brand or business.
+          </p>
+        </span>
+    </div>
+  </div>
+  <script defer src="fakebook.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+html {
+  font-size: 1.2vw;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #1e1e21;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+#box1 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  margin: 0 0%;
+  padding: 0; 
+}
+
+#box1 #brandMessage {
+  height: 10%;
+  width: 100%;
+  margin: 11% 5% 0 10%;
+  padding: 1rem;
+}
+
+#brandMessage img {
+  width: 60%;
+  height: 60%;
+  margin: 0;
+  padding: 0;
+}
+
+
+#brandMessage > h2 {
+  height: 100%;
+  width: 100%;
+  color: #1c1e21;
+  font: lighter 1.75rem Roboto;
+  margin: -1rem 2rem;
+  padding: 0 0 1rem;
+}
+
+#userInteraction {
+  width: 80%;
+  height: 80%;
+  padding: 0;
+  margin: 10% 15% 2% 2%;
+  box-sizing: border-box;
+}
+
+#userInteraction > #prompt {
+  box-shadow: 10px 10px 5px lightgrey;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: 0 0 1.5rem 0;
+}
+
+input.prompt{
+  width: 90%;
+  height: auto;
+  color: grey;
+  font-size: 1rem;
+  padding: 0.95rem;
+  margin: 0.70rem 0.80rem 0 0.80rem;
+  width: 84%;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
+/*HTML Event*/
+input.prompt:focus {
+  color: #1e1e21;
+}
+
+input#loginButton{
+  background-color: #166fe5;
+  font: bold 1.2rem Helvetica ;
+  color: white;
+  padding: 0.7rem 0.5rem;
+  margin: 1.2rem 1rem 0.8rem 0.90rem ;
+  width: 92%;
+  border-radius: 5px;
+  border: none;
+}
+
+a#forgotPassword {
+  color: #166fe5;
+  border: none;
+  margin: 0 8.5rem ;
+  font: 0.85rem Helvetica;
+  text-decoration: none;
+}
+
+#prompt hr {
+  width: 90%;
+  background-color: lightgrey;
+  height: 1px;
+  border: none;
+  margin: 1.5rem 1rem 0.5rem;
+}
+
+input#newAccountButton {
+  background-color: #37b248;
+  color: white;
+  font: bold 1rem Helvetica;
+  margin: 1rem 6rem 1.5rem;
+  padding: 0.90rem;
+  width: 50%;
+  border: none;
+  border-radius: 5px;
+}
+
+#userInteraction > span > p {
+  font: 0.85rem Helvetica;
+  padding: 0 0 0%;
+  margin: 0 10%;
+}
+
+#userInteraction span p a{
+  text-decoration: none;
+  color: black;
+}
+
+#userInteraction a:hover{
+  text-decoration: underline;
+}
+
+a#forgotPassword:hover{
+  text-decoration: underline;
+}
+
+
