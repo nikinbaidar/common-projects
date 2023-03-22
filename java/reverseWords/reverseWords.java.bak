@@ -1,0 +1,38 @@
+import java.util.HashMap;
+import java.util.Arrays;
+
+public class reverseWords {
+
+    // static String str = " hello world ";
+    // static String str = "a good   example";
+    static String str = "the sky is blue";
+
+    public static void main(String args[]) {
+        int i;
+        int len = str.length();
+        byte wordLength = 0; // Space inclusive
+        byte extraSpaces = 0; // space inclusive
+        int lastWordIndex = 0;
+        String subStr = "";
+
+        for (i = 0; i < len; i++) {
+
+            if (str.charAt(i) == ' ') {
+                subStr = str.substring(i-wordLength, i+1) + subStr;
+                wordLength = 0;
+                lastWordIndex = i + 1;
+            }
+            else {
+                wordLength++;
+            }
+        }
+
+    subStr = str.substring(lastWordIndex, i) + " " + subStr;
+    // Remove the last space.
+    subStr = subStr.substring(0, subStr.length() - 1);
+
+    System.out.println("'" + subStr + "'");
+
+
+}
+}
