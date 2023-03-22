@@ -2,3 +2,5 @@
 **/runcode
 **/.runcode
 **/.tags
+**/tags
+**/__pycache__
