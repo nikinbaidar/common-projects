@@ -1,0 +1,181 @@
+SHOW tables;
+
+-- In the machines table below, we have created a table with two columns
+-- (model and serial_number) that together form a composite primary
+-- key for the table. This means that the combination of values in these two
+-- columns must be unique for each row in the table.
+
+CREATE TABLE manufacturer (
+    name VARCHAR(15),
+    country VARCHAR(2),
+    supplier_id INT,
+    contact INT,
+    PRIMARY KEY (supplier_id)
+);
+
+-- MAKE Updates 
+-- 1. Change table name to 'manufacturer'
+-- 1. Change column name 'address' to 'country'
+-- 1. Change column 'vendorId' to 'supplier_id'
+-- 1. Delete the column 'contact'.
+
+
+ALTER TABLE vendor RENAME TO manufacturer;
+ALTER TABLE manufacturer CHANGE address country VARCHAR(15);
+ALTER TABLE manufacturer CHANGE vendorId supplier_id INT;
+ALTER TABLE manufacturer DROP COLUMN contact;
+
+DESCRIBE manufacturer;
+
+--- Insert values into manufacturer.
+
+INSERT INTO manufacturer (name, country, supplier_id) 
+VALUES
+    ('ELITechGroup', 'NL', '1'),
+    ('Trinity Biotech', 'US', '2'),
+    ('Techno Medica', 'JP', '3');
+
+-- View manufacturer
+
+SELECT * FROM manufacturer;
+
+
+-- Create some more tables.
+
+CREATE TABLE empolyees (
+    employeeId INT,
+    employeeName VARCHAR(20),
+    employmentType VARCHAR(20) NOT NULL,
+    designation VARCHAR(20),
+    department VARCHAR(20),
+    PRIMARY KEY (employeeId)
+);
+
+-- UPDATE THE employmentType's Datatype to ENUM
+
+ALTER TABLE empolyees
+MODIFY COLUMN employmentType ENUM('p', 'trainee', 'intern');
+
+
+CREATE TABLE department (
+    name VARCHAR(20),
+    headOfDepartment INT,
+    employeesCount SMALLINT,
+    department_id INT,
+    FOREIGN KEY (headOfDepartment) REFERENCES empolyees(employeeId),
+    PRIMARY KEY (department_id)
+);
+
+INSERT INTO department (name, employeesCount, department_id)
+    VALUES
+    ("Biochemistry", 2, 11)
+
+
+CREATE TABLE device (
+    name VARCHAR(15),
+    supplier_id VARCHAR(15),
+    department INT,
+    device_id VARCHAR(10),
+    warranty_period_months INT,
+    PRIMARY KEY (device_id),
+    FOREIGN KEY (department) REFERENCES department(department_id)
+);
+
+INSERT INTO device (name, supplier_id, department, device_id)
+    VALUES
+        ("Selctra Pro M", 1, 11, 11),
+        ("Selctra Pro S", 1, 11, 12 ),
+        ("Selctra Mach 5", 1, 11, 13),
+        ("Premier 9210", 2, 11, 21),
+        ("GASTAT 700", 3, 11, 31);
+
+ALTER TABLE device ADD COLUMN device_type VARCHAR(40);
+
+ALTER TABLE client MODIFY COLUMN device_id VARCHAR(10);
+
+SELECT * FROM client;
+
+SELECT * FROM device;
+
+CREATE TABLE spare_parts (
+    number VARCHAR(20),
+    name VARCHAR(30),
+    model VARCHAR(15),
+    stock INT,
+    price INT,
+    FOREIGN KEY (model) REFERENCES device(model)
+);
+
+CREATE TABLE client (
+    name VARCHAR(20),
+    client_id INT,
+    address VARCHAR(15),
+    device_id INT,
+    installation_date DATE,
+    serial_number INT,
+    last_pm_date DATE,
+    last_pm_type ENUM("annual", "semi-annual"),
+    last_system_cleaned DATE,
+    PRIMARY KEY (client_id, serial_number),
+    FOREIGN KEY (device_id) REFERENCES device(device_id)
+);
+
+DESCRIBE client;
+
+SELECT constraint_name
+FROM information_schema.key_column_usage
+WHERE referenced_table_schema = 'lifescience'
+  AND table_name = 'client'
+  AND referenced_table_name IS NOT NULL;
+
+ALTER TABLE client
+ADD FOREIGN KEY device_id (device_id)
+REFERENCES device(device_id);
+
+ALTER TABLE client
+MODIFY COLUMN serial_number VARCHAR(15);
+
+
+## PREVENTIVE MAINTANANCE
+
+SELECT name, client_id FROM client;
+
+
+DESCRIBE client;
+
+UPDATE client
+SET 
+    last_pm_date = "2023-09-19",
+    last_pm_type = "annual"
+    -- last_system_cleaned = '2023-09-26'
+WHERE client_id = 11 AND serial_number = 4;
+
+UPDATE client
+SET
+    serial_number = "21-5008"
+WHERE client_id = 19 AND device_id = "BCA-301"
+
+
+DESCRIBE device;
+
+-- LEFT JOIN  ON CLIENT AND DEVICE
+SELECT c.name as client_name, c.client_id, d.device_id,
+    c.serial_number serial_num, c.installation_date,
+    -- (YEAR(NOW()) - YEAR(c.installation_date)) AS elapsed_years,
+    CASE
+    WHEN ROUND(DATEDIFF(NOW(), c.installation_date) / 30.44) <= d.warranty_period_months  THEN 'Yes' ELSE 'No'
+    END AS 'under_warranty?',
+    c.last_pm_date, c.last_system_cleaned
+FROM client c
+LEFT JOIN device d 
+ON c.device_id = d.device_id
+-- WHERE c.client_id = 11 
+WHERE c.name LIKE 'tu%'
+-- WHERE c.last_system_cleaned IS NULL
+-- WHERE d.device_type = "Biochemistry Analyzer" AND c.name LIKE 'star%'
+-- WHERE d.device_id = 11 OR d.device_id = 12 OR d.device_id = 13
+
+
+INSERT INTO client (name, client_id, address, device_id, installation_date, serial_number)
+VALUES ("Star Hospital", 19, "Sanepa", 13, '2022-09-01', 1);
+

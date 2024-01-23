@@ -1,0 +1,72 @@
+-- MariaDB
+
+show databases;
+
+use bookshop;
+
+show tables;
+
+
+-- Creating Tables
+
+CREATE TABLE bookshop.books (
+    id SMALLINT AUTO_INCREMENT,
+    name VARCHAR(20),
+    edition YEAR(4),
+    genre VARCHAR(20),
+    price DECIMAL(4,2),
+    author VARCHAR(20),
+    PRIMARY KEY (id)
+);
+
+DESCRIBE bookshop.books;
+
+-- Altering columns in a table
+
+ALTER TABLE bookshop.books
+ADD 
+COLUMN additionalcolumn varchar(20);
+DESCRIBE bookshop.books;
+
+ALTER TABLE bookshop.books 
+RENAME
+COLUMN additionalcolumn TO newcolumn;
+DESCRIBE bookshop.books;
+
+ALTER TABLE bookshop.books 
+MODIFY 
+COLUMN newcolumn INT;
+DESCRIBE bookshop.books;
+
+ALTER TABLE bookshop.books 
+DROP 
+COLUMN newcolumn;
+DESCRIBE bookshop.books;
+
+DROP table books;
+
+SELECT * FROM bookshop.books;
+
+-- Creating records
+
+INSERT INTO bookshop.books VALUES (
+    3,
+    "Witch of Portebello",
+    2016,
+    "Fictin",
+    39.00,
+    "Paulo Cohelo"
+);
+
+INSERT INTO bookshop.books (name, edition, genre, price, author)
+VALUES (
+    "Hello, Friend!",
+    2002,
+    "Fight",
+    79.00,
+    "Not Me"
+);
+
+SELECT * FROM bookshop.books;
+
+SELECT books.name, books.price FROM bookshop.books WHERE author IS NULL;

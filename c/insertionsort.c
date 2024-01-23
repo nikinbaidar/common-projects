@@ -2,8 +2,11 @@
 #include "array.h"
 
 void main() {
-    int myArray [] = {2, 6, 4, 0, 5, 1, 3};
-    const int end = getEndIndex(myArray);
-    insertionSort(myArray, end);
-    printArray(myArray, end);
+    int x [] = {1, 7, 9, 8, 10, 33, 45};
+    static unsigned int end;
+    end = getEndIndex(x);
+    // printf("%d", contains(1, x, end));
+    printArray(x, end);
+insertionSort(x, end);
+    printArray(x, end);
 }

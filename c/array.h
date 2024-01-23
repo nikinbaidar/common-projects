@@ -1,6 +1,7 @@
 #define getEndIndex(arr) (sizeof(arr)/sizeof(*arr) - 1)
 
-const int start = 0;
+
+const short int start = 0;
 
 /* Function Definitions */
 
@@ -11,6 +12,7 @@ static int binarySearch(int x, int *arr, int start, int end);
 static int ternarySearch(int x, int *arr, int start, int end);
 static int contains(int x, int *arr, const size_t lengthOfArray);
 
+
 void insert (int arr[], int i, int a) {
     if (arr[i-1] <= a || i == 0)
         arr[i] = a;
@@ -19,6 +21,7 @@ void insert (int arr[], int i, int a) {
         insert(arr, i-1, a);
     }
 }
+
 
 void insertionSort(int arr[], int end) {
     /* Insertion sort is only scaleable for shorter arrays! */
@@ -30,9 +33,9 @@ void insertionSort(int arr[], int end) {
 
 
 void printArray(int *array, const size_t lengthOfArray) {  
-    printf("[");
+    printf("\n{");
     for (int i = 0; i <= lengthOfArray; i++)  { printf("%d, ", *(array+i)); }
-    printf("\b\b]\n");
+    printf("\b\b}");
 }
 
 
@@ -60,6 +63,6 @@ int binarySearch(int x, int *arr, int start, int end) {
 
 
 int contains(int x, int *arr, const size_t arrayEndIndex) {
-    int result = binarySearch(x, arr, start, arrayEndIndex);
-    return (result != -1);
+        int result = binarySearch(x, arr, start, arrayEndIndex);
+        return (result != -1);
 }

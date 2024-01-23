@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdbool.h>
 
 static bool isEven(int a);
 static bool isFactor(int a, int b);
@@ -30,4 +31,28 @@ double power(double x, double n) {
     double result;
     result = (floor(n/2) > 0) ? x * power(x, floor(n/2) - 1) : 1;
     return isEven(n) ? result * result : x * result * result;
+}
+
+
+/* Custom datatype */
+
+struct Point {
+    double x;
+    double y;
+};
+
+
+/* x and y are co-ordinates and p is the point that they make */
+struct Point* makepoint (double x, double y) {
+
+    struct Point* p = malloc(sizeof(struct Point));
+    p->x = x;
+    p->y = y;
+    return p;
+}
+
+double distance (struct Point* p1, struct Point* p2) {
+    double dx = p1->x - p2->x;
+    double dy = p1->y - p2->y;
+    return sqrt(dx*dx+dy*dy);
 }

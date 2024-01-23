@@ -17,12 +17,12 @@ function openFilePickerDialog() {
 
 
     function createNewFile() {
-        echo -en "\n:: Enter new filename: ${_g}${input}" 
+        echo -en "\n:: Enter new filename: ${_g}${input}\b" 
         read filename
         input="${input}""${filename}"
         # Just in case user decided to add a sub directory in path.
         sub_dir=$(echo "${input}" | awk 'BEGIN { FS = "/" } {
-        for(i=1; i<NF; i++) 
+        for(i=1; i<=NF; i++) 
             printf $i"/"
         }')
         if ! [ -d "${sub_dir}" ]; then
@@ -50,6 +50,7 @@ function openFilePickerDialog() {
     [[ -d "${input}" ]] && extendFilePickerDialog "${input}"
     echo ${input} > /tmp/temporaryfile.txt
 }
+
 export -f openFilePickerDialog
 
 
